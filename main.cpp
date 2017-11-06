@@ -4,21 +4,24 @@ using namespace std;
 
 int main()
 {
-    int a[20], nr, i;
+    int a[20], nr, i, j, aux;
     cout << "Numarul de elemente din sirul a (maxim 20) : ";
     cin >> nr;
     for (i = 0; i < nr; i++) {
         cout << "a[" << i << "] = ";
         cin >> a[i];
     }
-    int max;
-    max = a[0];
-    for (i = 1; i < nr; i++)
+    for (i = 0, j = nr - 1; i < j; i++, j--)
     {
-        if(max < a[i])
-            max = a[i];
+        aux = a[i];
+        a[i] = a[j];
+        a[j] = aux;
     }
-    cout << "Elementul maxim este : " << max << endl;
+    for (i = 0; i < nr; i++)
+    {
+        cout << a[i] << " ";
+    }
+    cout <<  endl;
     return 0;
 }
 
