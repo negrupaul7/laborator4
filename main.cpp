@@ -11,13 +11,14 @@ int main()
         cout << "a[" << i << "] = ";
         cin >> a[i];
     }
-    long sum;
-
-    for (i = 0, sum = 0; i < nr; i++)
+    int max;
+    max = a[0];
+    for (i = 1; i < nr; i++)
     {
-        sum = sum + a[i];
+        if(max < a[i])
+            max = a[i];
     }
-    cout << "Suma elementelor sirului a este : " << sum << endl;
+    cout << "Elementul maxim este : " << max << endl;
     return 0;
 }
 
